@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Objects;
 
 public class DataTypes {
@@ -26,6 +27,9 @@ public class DataTypes {
         for (int i = 0; i < counts.length; i++) {
             System.out.println(i + " : " + counts[i]);
         }
+
+        Arrays.stream(counts).forEach(System.out::println); // call static
+        Arrays.stream(counts).forEach(count -> System.out.println(count));
 
 
         if (Objects.equals(name1, "Weerayooth")){
