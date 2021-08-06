@@ -1,5 +1,22 @@
-public class MySort {
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
+public class MySort {
+    private final List<Integer> input;
+
+    public MySort(List<Integer> inputArr) {
+        this.input = inputArr;
+    }
+
+    public List<Integer> Sorted() {
+        if (input.size() == 0){
+            return input;
+        }
+        return input;
+
+    }
 }
 
 
