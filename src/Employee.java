@@ -25,7 +25,7 @@ public class Employee {
     }
 
     public String getFullName() {
-        return fname + " " + lname;
+        return fname + " : " + lname;
     }
 
     public String getPositionName() {
