@@ -5,7 +5,7 @@ public class Employee {
     private int id;
     private String fname;
     private String lname;
-    //    Department department;
+    private Department department;
     private String pos;
 
     // Constructor
