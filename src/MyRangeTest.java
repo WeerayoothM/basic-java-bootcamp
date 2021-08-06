@@ -59,4 +59,32 @@ class MyRangeTest {
         assertEquals(4, endNumber);
     }
 
+    @Test
+    public void getResult01(){
+        MyRange myRange = new MyRange("[1,5]");
+        String result = myRange.getResult();
+        assertEquals("1,2,3,4,5",result);
+    }
+
+    @Test
+    public void getResult02(){
+        MyRange myRange = new MyRange("(1,5]");
+        String result = myRange.getResult();
+        assertEquals("2,3,4,5",result);
+    }
+
+    @Test
+    public void getResult03(){
+        MyRange myRange = new MyRange("[1,5)");
+        String result = myRange.getResult();
+        assertEquals("1,2,3,4",result);
+    }
+
+    @Test
+    public void getResult04(){
+        MyRange myRange = new MyRange("(1,5)");
+        String result = myRange.getResult();
+        assertEquals("2,3,4",result);
+    }
+
 }

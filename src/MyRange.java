@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Scanner;
 
 public class MyRange {
@@ -65,5 +67,17 @@ public class MyRange {
             return endNumber;
         }
         return endNumber - 1;
+    }
+
+    public String getResult() {
+        int firstNumber = getFirstNumber();
+        int endNumber = getEndNumber();
+
+        List<String> results = new ArrayList<String>();
+        for (int i = firstNumber; i <= endNumber ; i++) {
+            results.add(String.valueOf(i));
+        }
+        return  String.join(",",results);
+
     }
 }
