@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MySort {
-    private final List<Integer> input;
+    private List<Integer> input;
 
     public MySort(List<Integer> inputArr) {
         this.input = inputArr;
@@ -25,8 +25,12 @@ public class MySort {
         if (isSorted) return input;
 
         List<Integer> sortedArr = new ArrayList<>();
+        List<Integer> dupInput = new ArrayList<>(input);
         for (Integer integer : input) {
-            sortedArr.add(0,integer);
+            int maxInt = findMax(dupInput);
+            sortedArr.add(0,maxInt);
+            int index = dupInput.indexOf(maxInt);
+            dupInput.remove(index);
         }
 
         return sortedArr;
