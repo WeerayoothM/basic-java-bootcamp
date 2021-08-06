@@ -73,6 +73,7 @@ public class MyRange {
         int firstNumber = getFirstNumber();
         int endNumber = getEndNumber();
 
+        // Collection Framework
         List<String> results = new ArrayList<String>();
         for (int i = firstNumber; i <= endNumber ; i++) {
             results.add(String.valueOf(i));
