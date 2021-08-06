@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.Scanner;
 
 public class MyRange {
@@ -13,7 +14,7 @@ public class MyRange {
 
         String[] tests = input.split(",");
         int start = Integer.parseInt(tests[0].substring(1));
-        int end = Integer.parseInt(tests[1].substring(0,1));
+        int end = Integer.parseInt(tests[1].substring(0, 1));
 
         if (start > end) {
             System.out.println("invalid input start number has more than end number");
@@ -29,15 +30,15 @@ public class MyRange {
 
         String output = "";
         for (int i = start; i <= end; i++) {
-            if ( i == start){
+            if (i == start) {
                 output += i;
                 continue;
             }
             output += ", " + i;
         }
-        if (output.length() > 0){
+        if (output.length() > 0) {
             System.out.println(output);
-        }else{
+        } else {
             System.out.println("No value in range");
         }
     }
@@ -48,9 +49,21 @@ public class MyRange {
 
     public int getFirstNumber() {
         int firstNumber = Character.getNumericValue(input.charAt(1));
-        if(checkStartWithInclude()){
+        if (checkStartWithInclude()) {
             return firstNumber;
         }
-        return firstNumber + 1 ;
+        return firstNumber + 1;
+    }
+
+    public boolean checkEndWithInclude() {
+        return input.endsWith("]");
+    }
+
+    public int getEndNumber() {
+        int endNumber = Character.getNumericValue(input.charAt(3));
+        if (checkEndWithInclude()) {
+            return endNumber;
+        }
+        return endNumber - 1;
     }
 }
