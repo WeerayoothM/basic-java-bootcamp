@@ -15,9 +15,14 @@ public class MySort {
             return input;
         }
 
-        if (input.get(0) <= input.get(1)) {
-            return input;
+        boolean isSorted = true;
+        for (int i = 0; i < input.size() - 1; i++) {
+            if ( input.get(i) > input.get(i+1) ){
+                isSorted = false;
+                break;
+            }
         }
+        if (isSorted) return input;
 
         List<Integer> sortedArr = new ArrayList<>();
         for (Integer integer : input) {
