@@ -11,12 +11,26 @@ public class MySort {
     }
 
     public List<Integer> Sorted() {
-        if (input.size() == 0 || input.size() == 1){
+        if (input.size() == 0 || input.size() == 1) {
+            return input;
+        }
+
+        if (input.get(0) <= input.get(1)) {
             return input;
         }
 
         return Collections.emptyList();
 
+    }
+
+    private int findMax(List<Integer> inputArr) {
+        int max = inputArr.get(0);
+        for (Integer integer : inputArr) {
+            if (integer > max) {
+                max = integer;
+            }
+        }
+        return max;
     }
 }
 
