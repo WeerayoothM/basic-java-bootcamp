@@ -19,7 +19,12 @@ public class MySort {
             return input;
         }
 
-        return Collections.emptyList();
+        List<Integer> sortedArr = new ArrayList<>();
+        for (Integer integer : input) {
+            sortedArr.add(0,integer);
+        }
+
+        return sortedArr;
 
     }
 

@@ -34,4 +34,13 @@ class MySortTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void case04(){
+        List<Integer> inputArr = Arrays.asList(2,1);
+        MySort mySort = new MySort(inputArr);
+        List<Integer> expected = Arrays.asList(1,2);
+        List<Integer> actual = mySort.Sorted();
+        assertEquals(expected, actual);
+    }
+
 }
