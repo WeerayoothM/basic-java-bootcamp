@@ -11,10 +11,11 @@ public class MySort {
     }
 
     public List<Integer> Sorted() {
-        if (input.size() == 0){
+        if (input.size() == 0 || input.size() == 1){
             return input;
         }
-        return input;
+
+        return Collections.emptyList();
 
     }
 }
