@@ -3,10 +3,21 @@ public class Employee {
     // type | prop
 
     private int id;
-    private String fname = "Weerayooth";
-    private String lname = "Manawanich";
+    private String fname;
+    private String lname;
     //    Department department;
     private String pos;
+
+    // Constructor
+    public Employee() {
+        // call constructor
+        this("","");
+    } // add this for protext constructor overload
+
+    public Employee(String fname, String lname) {
+        this.fname = fname;
+        this.lname = lname;
+    }
 
     // Behaviors or method
     void doSmt() {
