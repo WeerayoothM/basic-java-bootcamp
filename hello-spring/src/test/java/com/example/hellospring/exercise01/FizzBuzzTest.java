@@ -59,4 +59,40 @@ class FizzBuzzTest {
         String actual = fizzBuzz.getResult(input);
         assertEquals("Fizz",actual);
     }
+
+    @Test
+    @DisplayName("Input is 7")
+    void case07() {
+        int input = 7;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String actual = fizzBuzz.getResult(input);
+        assertEquals("7",actual);
+    }
+
+    @Test
+    @DisplayName("Input is 9")
+    void case09() {
+        int input = 9;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String actual = fizzBuzz.getResult(input);
+        assertEquals("Fizz",actual);
+    }
+
+    @Test
+    @DisplayName("Input is 11")
+    void case11() {
+        int input = 11;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String actual = fizzBuzz.getResult(input);
+        assertEquals("11",actual);
+    }
+
+    @Test
+    @DisplayName("Input is 12")
+    void case12() {
+        int input = 12;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String actual = fizzBuzz.getResult(input);
+        assertEquals("Fizz",actual);
+    }
 }
