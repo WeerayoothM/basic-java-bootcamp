@@ -23,4 +23,13 @@ class FizzBuzzTest {
         String actual = fizzBuzz.getResult(input);
         assertEquals("2",actual);
     }
+
+    @Test
+    @DisplayName("Input is 3")
+    void case03() {
+        int input = 3;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String actual = fizzBuzz.getResult(input);
+        assertEquals("Fizz",actual);
+    }
 }
