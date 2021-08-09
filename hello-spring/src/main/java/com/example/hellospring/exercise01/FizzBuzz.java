@@ -1,17 +1,17 @@
 package com.example.hellospring.exercise01;
 
 public class FizzBuzz {
-    public String getResult(int input) {
-        String result = "";
-        if (input % 3 == 0){
-            result += "Fizz";
+    public String getResult(int number) {
+        FizzBuzzCondition fizzBuzzCondition = new FizzBuzzCondition();
+        if (fizzBuzzCondition.check(number)){
+            return fizzBuzzCondition.print();
         }
-        if(input % 5 == 0){
-            result += "Buzz";
+        if (number % 3 == 0){
+            return "Fizz";
         }
-        if (result.length() > 0){
-            return result;
+        if(number % 5 == 0){
+            return "Buzz";
         }
-        return String.valueOf(input) ;
+        return String.valueOf(number) ;
     }
 }
