@@ -12,6 +12,15 @@ class FizzBuzzTest {
         int input = 1;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String actual = fizzBuzz.getResult(input);
-        assertEquals("1", actual);
+        assertEquals("1",actual);
+    }
+
+    @Test
+    @DisplayName("Input is 2")
+    void case02() {
+        int input = 2;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        String actual = fizzBuzz.getResult(input);
+        assertEquals("2",actual);
     }
 }
