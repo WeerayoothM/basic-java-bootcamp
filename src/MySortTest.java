@@ -88,4 +88,12 @@ class MySortTest {
         assertEquals(expected, actual);
     }
 
+    private List<Integer> asList(Integer... inputs){
+        List<Integer> results = new ArrayList<>();
+        for (Integer input : inputs) {
+            results.add(input);
+        }
+        return results;
+    }
+
 }
