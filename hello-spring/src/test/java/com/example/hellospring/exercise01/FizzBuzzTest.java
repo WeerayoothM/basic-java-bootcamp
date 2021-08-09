@@ -66,7 +66,7 @@ class FizzBuzzTest {
         int input = 7;
         FizzBuzz fizzBuzz = new FizzBuzz();
         String actual = fizzBuzz.getResult(input);
-        assertEquals("7",actual);
+        assertEquals("KBTG",actual);
     }
 
     @Test
