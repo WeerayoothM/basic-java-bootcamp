@@ -41,6 +41,30 @@ class Report1 extends Report{
     }
 }
 
+// Lego not flow
 interface Lego {
-
+    void generateHeader();
+    void generateBody();
+    void generateFooter();
 }
+
+class Process implements Lego{
+
+    @Override
+    public void generateHeader() {
+
+    }
+
+    @Override
+    public void generateBody() {
+
+    }
+
+    @Override
+    public void generateFooter() {
+
+    }
+}
+
+
+
