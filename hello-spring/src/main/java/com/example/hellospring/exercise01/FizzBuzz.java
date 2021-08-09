@@ -2,7 +2,7 @@ package com.example.hellospring.exercise01;
 
 public class FizzBuzz {
     public String getResult(int input) {
-        if (input == 3){
+        if (input % 3 == 0){
             return "Fizz";
         }
         if(input == 5){
