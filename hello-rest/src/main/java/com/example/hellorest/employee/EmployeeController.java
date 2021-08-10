@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
 
     public EmployeeResponse getEmployeeByID(int id){
-        return new EmployeeResponse(id , "Weerayooth","Ohm");
+        return new EmployeeResponse(1 , "Weerayooth","Ohm");
     }
 }
