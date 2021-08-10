@@ -10,14 +10,13 @@ public class EmployeeController {
     @GetMapping("/employee/{id}")
     public EmployeeResponse getEmployeeByID(@PathVariable String id) {
         // Validate id => Number only
-        boolean isNumber = true;
-        for (String s : id.split("")) {
-            if (isDigit(s)) {
-                isNumber = false;
-                break;
-            }
+        int _id = 0;
+        try{
+            _id = Integer.parseInt(id);
+        }catch (Exception e){
+          //Error => TODO
         }
-        int _id = isNumber ? Integer.parseInt(id) : 0;
+
         return new EmployeeResponse(_id, "Weerayooth", "Ohm");
     }
 
