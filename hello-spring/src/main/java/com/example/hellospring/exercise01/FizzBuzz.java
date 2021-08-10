@@ -6,7 +6,7 @@ public class FizzBuzz {
             new FizzBuzzCondition(),
             new FizzCondition(),
             new BuzzCondition(),
-            new KBTGCondition()
+            new KBTGCondition(),
     };
     public String getResult(int number) {
         for (MyCondition condition : conditions) {
@@ -16,4 +16,5 @@ public class FizzBuzz {
         }
         return String.valueOf(number) ;
     }
+
 }
