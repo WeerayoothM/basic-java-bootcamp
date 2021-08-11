@@ -3,6 +3,7 @@ package com.example.hellorest.employee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
 import java.util.Random;
@@ -10,20 +11,15 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.boot.test.context.SpringBootTest.*;
 
-
-// Overide by method
-class Random7 extends MyRandom {
-    @Override
-    public int nextInt(int bound) {
-        return 7;
-    }
-}
-
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class EmployeeControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
+
+    // เป็นการจำลอง
+    @MockBean
+    private MyRandom random;
 
     @Test
     public void callApiWithPathVariable() {
