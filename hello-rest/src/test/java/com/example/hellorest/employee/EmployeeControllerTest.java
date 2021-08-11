@@ -1,6 +1,7 @@
 package com.example.hellorest.employee;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -23,6 +24,9 @@ public class EmployeeControllerTest {
 
     @Test
     public void callApiWithPathVariable() {
+        // Mock/Stub/Spy
+        Mockito.when(random.nextInt(10)).thenReturn(7);
+
         // convert Json to EmployeeResponse สร้างโดยใช้ default contructor
         EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
 
