@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
 
-//    @GetMapping("/employee/{id}")
-//    public EmployeeResponse getEmployeeByID(@PathVariable String id) {
-//        // Validate id => Number only
-//        int _id = 0;
-//        try{
-//            _id = Integer.parseInt(id);
-//        }catch (Exception e){
-//          //Error => TODO
-//        }
-//
-//        return new EmployeeResponse(_id, "Weerayooth", "Ohm");
-//    }
+    @GetMapping("/employee/{id2}")
+    public EmployeeResponse getEmployeeByID(@PathVariable(name="id2") String id) {
+        // Validate id => Number only
+        int _id = 0;
+        try{
+            _id = Integer.parseInt(id);
+        }catch (Exception e){
+          //Error => TODO
+        }
 
-    // employee?id=?
+        return new EmployeeResponse(_id, "Weerayooth", "Ohm");
+    }
+
+    // employee?id2=?
     @GetMapping("/employee")
-    public EmployeeResponse getEmployeeByID(@RequestParam String id) {
+    public EmployeeResponse getEmployeeByID2(@RequestParam(defaultValue = "") String id) {
         // Validate id => Number only
         int _id = 0;
         try{
