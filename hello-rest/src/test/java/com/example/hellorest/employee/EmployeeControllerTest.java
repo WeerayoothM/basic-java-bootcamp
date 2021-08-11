@@ -1,5 +1,6 @@
 package com.example.hellorest.employee;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +43,18 @@ public class EmployeeControllerTest {
 
     @Test
     public void callApiWithRequestParam() {
-        // convert Json to EmployeeResponse สร้างโดยใช้ default contructor
+        // convert Json to EmployeeResponse สร้างโดยใช้ default constructor
         EmployeeResponse response = restTemplate.getForObject("/employee?id=777", EmployeeResponse.class);
         assertEquals(777 ,response.getId());
+        assertEquals("Weerayooth",response.getFname());
+        assertEquals("Ohm",response.getLname());
+    }
+
+    @Test
+    public void callApiWithCreateNew() {
+        EmployeeRequest request = new EmployeeRequest("Weerayooth","Ohm");
+        EmployeeResponse response = restTemplate.postForObject("/employee",request,EmployeeResponse.class);
+        assertEquals(999 ,response.getId());
         assertEquals("Weerayooth",response.getFname());
         assertEquals("Ohm",response.getLname());
     }

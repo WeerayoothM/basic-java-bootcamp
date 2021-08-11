@@ -52,8 +52,6 @@ public class EmployeeController {
     @PostMapping("/employee")
     public EmployeeResponse createNewEmployee(@RequestBody EmployeeRequest request){
         // Validation  send body with wrong key
-
-
         return new EmployeeResponse(999,request.getFname(), request.getLname());
     }
 
