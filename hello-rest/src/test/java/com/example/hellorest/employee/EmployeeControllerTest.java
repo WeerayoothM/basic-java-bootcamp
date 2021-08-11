@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
+
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,7 +22,7 @@ public class EmployeeControllerTest {
 
     // เป็นการจำลอง
     @MockBean
-    private MyRandom random;
+    private Random random;
 
     @Test
     public void callApiWithPathVariable() {
