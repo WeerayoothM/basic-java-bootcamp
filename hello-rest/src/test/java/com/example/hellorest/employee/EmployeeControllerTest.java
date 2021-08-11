@@ -10,6 +10,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.springframework.boot.test.context.SpringBootTest.*;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -25,7 +26,7 @@ public class EmployeeControllerTest {
     @Test
     public void callApiWithPathVariable() {
         // Mock/Stub/Spy
-        Mockito.when(random.nextInt(10)).thenReturn(7);
+        Mockito.when(random.nextInt(anyInt())).thenReturn(7);
 
         // convert Json to EmployeeResponse สร้างโดยใช้ default contructor
         EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
