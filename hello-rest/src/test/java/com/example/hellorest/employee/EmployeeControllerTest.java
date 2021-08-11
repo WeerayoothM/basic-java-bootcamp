@@ -17,10 +17,14 @@ public class EmployeeControllerTest {
     @Test
     public void callApiWithPathVariable() {
         // convert Json to EmployeeResponse สร้างโดยใช้ default contructor
-        EmployeeResponse response = restTemplate.getForObject("/employee/1234", EmployeeResponse.class);
-        assertEquals(1234 ,response.getId());
+        EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
+
+        EmployeeResponse expected = new EmployeeResponse(123,"Weerayooth","Ohm");
+
+        assertEquals(123 ,response.getId());
         assertEquals("Weerayooth",response.getFname());
         assertEquals("Ohm",response.getLname());
+        assertEquals(expected,response);
     }
 
     @Test

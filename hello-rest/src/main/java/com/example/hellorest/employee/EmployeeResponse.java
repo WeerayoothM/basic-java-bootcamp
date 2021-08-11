@@ -1,5 +1,7 @@
 package com.example.hellorest.employee;
 
+import java.util.Objects;
+
 public class EmployeeResponse{
 	private String fname;
 	private String lname;
@@ -35,5 +37,18 @@ public class EmployeeResponse{
 
 	public int getId(){
 		return id;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EmployeeResponse that = (EmployeeResponse) o;
+		return id == that.id && Objects.equals(fname, that.fname) && Objects.equals(lname, that.lname);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(fname, lname, id);
 	}
 }
