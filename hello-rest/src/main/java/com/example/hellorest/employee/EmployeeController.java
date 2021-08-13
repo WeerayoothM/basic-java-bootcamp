@@ -45,7 +45,10 @@ public class EmployeeController {
         // Option cover null
         if (result.isPresent()) {
             Employee employee = result.get();
-            return new EmployeeResponse(employee.getId(), employee.getFirstName(), employee.getLastName());
+            return new EmployeeResponse(
+                    employee.getId(),
+                    employee.getFirstName() + number,
+                    employee.getLastName());
         }
 
         return new EmployeeResponse();

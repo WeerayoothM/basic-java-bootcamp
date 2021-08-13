@@ -25,11 +25,19 @@ public class EmployeeControllerTest {
     @MockBean
     private Random random;
 
+    @Autowired
+    private EmployeeRepository repository;
+
+
     @Test
-    public void callApiWithPathVariable() {
+    public void callApiWithPathVariableAndDatabase() {
         // Mock/Stub/Spy
         Mockito.when(random.nextInt(anyInt())).thenReturn(7);
 
+        // Create data
+        repository.save(new Employee(123,"Weerayooth","Ohm"));
+
+        // Call api
         // convert Json to EmployeeResponse สร้างโดยใช้ default contructor
         EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
 

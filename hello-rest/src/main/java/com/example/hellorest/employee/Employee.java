@@ -6,7 +6,7 @@ import javax.swing.plaf.DesktopPaneUI;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 //    @Column(name="fname")
     private String firstName;
@@ -16,7 +16,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee( String firstName, String lastName) {
+    public Employee(int id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
