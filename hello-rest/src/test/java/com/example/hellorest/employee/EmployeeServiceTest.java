@@ -23,6 +23,25 @@ class EmployeeServiceTest {
     private EmployeeRepository repository;
 
     @Test
+    public void employee100Notfound(){
+        when(random.nextInt(10)).thenReturn(10);
+
+        when(repository.findById(100)).thenReturn(
+                Optional.empty()
+        );
+
+        EmployeeService service = new EmployeeService();
+
+        service.setRandom(random); // Setter/ field/ property Injection
+        service.setRepository(repository);
+        EmployeeResponse response = service.process(100);
+
+        assertEquals(0,response.getId());
+        assertNull(response.getFname());
+        assertNull(response.getLname());
+    }
+
+    @Test
     public void foundEmployeeId1(){
         when(random.nextInt(10)).thenReturn(10);
 
