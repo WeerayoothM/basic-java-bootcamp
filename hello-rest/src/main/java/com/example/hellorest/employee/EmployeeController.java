@@ -28,6 +28,7 @@ public class EmployeeController {
             //Error => TODO
         }
 
+        // Delegate to service
         EmployeeResponse employeeResponse = employeeService.process(_id);
         return employeeResponse;
 
