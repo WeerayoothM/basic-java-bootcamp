@@ -4,35 +4,51 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.Random;
 
 @RestController
 public class EmployeeController {
 
     @Bean
-    public Random createNewRandom(){
+    public Random createNewRandom() {
         return new Random();
     }
 
     @Autowired
     private Random random;
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+
     @GetMapping("/employee/{id}")
     public EmployeeResponse getEmployeeByID(@PathVariable String id) {
         // Validate id => Number only
         int _id = 0;
-        try{
+        try {
             System.out.println(Integer.parseInt(id));
             _id = Integer.parseInt(id);
-        }catch (Exception e){
-          //Error => TODO
+        } catch (Exception e) {
+            //Error => TODO
         }
 
         // Workshop
 
         int number = random.nextInt(10);
 
-        return new EmployeeResponse(_id, "Weerayooth" + number, "Ohm");
+//        Employee data = new Employee("Weerayooth", "Manawanich");
+//        employeeRepository.save(data);
+
+        // call repository
+        Optional<Employee> result = employeeRepository.findById(_id);
+        // Option cover null
+        if (result.isPresent()) {
+            Employee employee = result.get();
+            return new EmployeeResponse(employee.getId(), employee.getFirstName(), employee.getLastName());
+        }
+
+        return new EmployeeResponse();
     }
 
     // employee?id2=?
@@ -40,9 +56,9 @@ public class EmployeeController {
     public EmployeeResponse getEmployeeByID2(@RequestParam(defaultValue = "") String id) {
         // Validate id => Number only
         int _id = 0;
-        try{
+        try {
             _id = Integer.parseInt(id);
-        }catch (Exception e){
+        } catch (Exception e) {
             //Error => TODO
         }
 
@@ -50,9 +66,9 @@ public class EmployeeController {
     }
 
     @PostMapping("/employee")
-    public EmployeeResponse createNewEmployee(@RequestBody EmployeeRequest request){
+    public EmployeeResponse createNewEmployee(@RequestBody EmployeeRequest request) {
         // Validation  send body with wrong key
-        return new EmployeeResponse(999,request.getFname(), request.getLname());
+        return new EmployeeResponse(999, request.getFname(), request.getLname());
     }
 
 }
