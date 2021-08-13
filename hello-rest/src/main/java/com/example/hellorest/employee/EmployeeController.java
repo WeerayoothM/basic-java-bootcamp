@@ -27,7 +27,6 @@ public class EmployeeController {
         // Validate id => Number only
         int _id = 0;
         try {
-            System.out.println(Integer.parseInt(id));
             _id = Integer.parseInt(id);
         } catch (Exception e) {
             //Error => TODO
