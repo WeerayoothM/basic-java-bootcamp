@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class HelloRestApplication implements CommandLineRunner {
+public class HelloRestApplication { //implements CommandLineRunner {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext context = SpringApplication.run(HelloRestApplication.class, args);
@@ -25,10 +25,10 @@ public class HelloRestApplication implements CommandLineRunner {
         System.out.println("Demo2 =>" + demo2.getName());
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-        System.out.println("Start ...");
-        System.out.println("Finish ...");
-    }
+//    @Override
+//    public void run(String... args) throws Exception {
+//        System.out.println("Start ...");
+//        System.out.println("Finish ...");
+//    }
 }
 
