@@ -39,11 +39,12 @@ class EmployeeServiceTest {
 
         service.setRandom(random); // Setter/ field/ property Injection
         service.setRepository(repository);
-        EmployeeResponse response = service.process(100);
 
-        assertEquals(0,response.getId());
-        assertNull(response.getFname());
-        assertNull(response.getLname());
+        Exception exception = assertThrows(EmployeeNotFoundException.class, ()->
+                service.process(100)
+        );
+
+        assertEquals("Employee id 100 not found",exception.getMessage());
     }
 
     @Test

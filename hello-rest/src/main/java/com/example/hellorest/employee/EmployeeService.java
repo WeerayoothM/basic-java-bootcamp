@@ -32,7 +32,7 @@ public class EmployeeService {
         }
 
         // Not Found ?
-        throw new EmployeeNotFoundException();
+        throw new EmployeeNotFoundException("Employee id " + id + " not found");
 
     }
 
