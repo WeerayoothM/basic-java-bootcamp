@@ -1,8 +1,12 @@
 package com.example.hellorest.user;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Component // anotation spring to load this class
 public class UserGateway {
@@ -10,9 +14,10 @@ public class UserGateway {
     @Autowired
     private RestTemplate restTemplate;
 
-    public Users getAllUsers(){
-        Users results = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users",Users.class);
-        return results;
+    public List<JsonMember> getAllUsers(){
+        JsonMember[] results = restTemplate.getForObject("https://jsonplaceholder.typicode.com/users", JsonMember[].class);
+        assert results != null;
+        return Arrays.asList(results);
     }
 
     public JsonMember getUserById(int id){
