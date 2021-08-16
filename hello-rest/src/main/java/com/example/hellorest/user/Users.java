@@ -1,15 +1,18 @@
 package com.example.hellorest.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Users {
-    private List<UserModel> users;
+    @JsonProperty("")
+    private List<JsonMember> users;
 
-    public List<UserModel> getUsers() {
+    public List<JsonMember> getUsers() {
         return users;
     }
 
-    public void setUsers(List<UserModel> users) {
+    public void setUsers(List<JsonMember> users) {
         this.users = users;
     }
 }
