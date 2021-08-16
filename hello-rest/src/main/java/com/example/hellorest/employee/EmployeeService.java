@@ -31,7 +31,9 @@ public class EmployeeService {
                     employee.getLastName());
         }
 
-        return new EmployeeResponse();
+        // Not Found ?
+        throw new EmployeeNotFoundException();
+
     }
 
     public void setRandom(Random random) {
